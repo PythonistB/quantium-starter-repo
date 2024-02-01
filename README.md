@@ -1,2 +1,4 @@
-# Quantium starter repo
-This repo contains everything you need to get started on the program! Good luck!
+# Quantium starter repo Begnazar
+
+
+Task number 1 from my Internship in Quantium. 01.02.2024
