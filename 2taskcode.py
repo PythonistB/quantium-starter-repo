@@ -1,8 +1,8 @@
 import os 
 import csv
 
-data_path = "C:/Users/user/Desktop/intern/quantium-starter-repo/data/"
-output_path = "C:/Users/user/Desktop/out/final_output.csv"
+data_path = "./data/"
+output_path = "./final_output.csv"
 
 with open(output_path, "w", newline = "") as file:
       a = csv.writer(file)
