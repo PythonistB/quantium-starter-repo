@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc, Input, Output, callback
+from dash import Dash, html, dcc, Input, Output, callback, ctx
 import pandas as pd 
 import plotly.express as px
 import plotly.io as pio
@@ -34,5 +34,22 @@ app.layout = html.Div( style={'backgroundColor': "#983418", "border-radius": "20
       dcc.Graph(id = "all_draw", figure = fig),
       dcc.RadioItems(["north", "east", "south", "west", "all"],"all",id = "select_location", inline = True, style = {"font-size": "200%", "textAlign": "center", "color": "#173814", "font-weight": "bold"})
       ])
+app.layout = html.Div([
+      html.Button('Header', id = 'btn-1'),      
+      html.Button('Visualization', id = 'btn-2'),      
+      html.Button('Region', id = 'btn-3'),
+      html.Div(id  = 'container-no-ctx')
+])
+
+@callback(
+      Output('container-no-ctx', 'children'),
+      Input('btn-1', 'n_clicks'))
+def Header(btn1):
+      return f'Header: {btn1}'  
+def Visualization(btn2):
+      return f'Visualization: {btn2}'
+def Region(btn3):
+      return f'Region: {btn3}'        
+      
 if __name__ == "__main__":
      app.run(debug = True)
